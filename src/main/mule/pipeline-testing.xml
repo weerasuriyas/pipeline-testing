@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd">
+	<flow name="pipeline-testingFlow" doc:id="11e33a3d-37b2-4c99-a798-02dd17f338ad" >
+		<scheduler doc:name="Scheduler" doc:id="793cd178-67ae-4c5b-ac40-862394648710" >
+			<scheduling-strategy >
+				<fixed-frequency />
+			</scheduling-strategy>
+		</scheduler>
+		<logger level="INFO" doc:name="Logger" doc:id="a971cc10-2758-40d9-a19f-11ea1b4e0510" message="App Is Live"/>
+	</flow>
+</mule>
