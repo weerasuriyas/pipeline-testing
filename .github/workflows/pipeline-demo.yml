@@ -31,4 +31,4 @@ jobs:
       - name: Get NPM
         run: npm install -g anypoint-cli@latest
       - name: run anypoint-cli
-        run: anypoint-cli
+        run: anypoint-cli --username=$AP_USERNAME --password=$AP_PASSWORD --environment=DEVELOPMENT runtime-mgr cloudhub-application modify pipeline-testing /target/pipeline-testing-1.0.0-SNAPSHOT-mule-application.jar
