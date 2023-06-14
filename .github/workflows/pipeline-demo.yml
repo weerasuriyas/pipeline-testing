@@ -30,4 +30,5 @@ jobs:
 
       - name: Get NPM
         run: npm install -g anypoint-cli@latest
+      - name: run anypoint-cli
         run: anypoint-cli
