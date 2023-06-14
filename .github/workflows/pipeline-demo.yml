@@ -21,8 +21,6 @@ jobs:
       - name: Build with Maven
         run: mvn clean package
 
-      - name: Build hello-world application with Maven
-        run: mvn --batch-mode --update-snapshots verify
       - name: Save Maven cache
         uses: skjolber/maven-cache-github-action@v1
         with:
@@ -31,4 +29,4 @@ jobs:
       - name: Get NPM
         run: npm install -g anypoint-cli@latest
       - name: run anypoint-cli
-        run: anypoint-cli --username=$AP_USERNAME --password=$AP_PASSWORD --environment=DEVELOPMENT runtime-mgr cloudhub-application modify pipeline-testing /target/pipeline-testing-1.0.0-SNAPSHOT-mule-application.jar
+        run: anypoint-cli --username={{ secret.AP_USERNAME }} --password={{ secret.AP_PASSWORD }} --environment=DEVELOPMENT runtime-mgr cloudhub-application modify pipeline-testing /target/pipeline-testing-1.0.0-SNAPSHOT-mule-application.jar
