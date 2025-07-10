@@ -1,5 +1,8 @@
 name: Cloudhub deploy to Dev
 # Controls when the workflow will run
+permissions:
+  contents: write
+  
 on:
   push:
     branches: [main]
