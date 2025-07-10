@@ -11,11 +11,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout dev branch
+    - name: Checkout main branch
       uses: actions/checkout@v3
       with:
         fetch-depth: 0
-        ref: dev
+        ref: main
     - name: Bump patch version
       run: |
         VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
@@ -30,7 +30,7 @@ jobs:
         git config user.email "github-actions@github.com"
         git add pom.xml
         git commit -m "ci: bump version to $NEW_VERSION [skip ci]" || echo "No changes to commit"
-        git push origin HEAD:dev || echo "No changes to push"
+        git push origin HEAD:main || echo "No changes to push"
     # - name: Cache dependencies
     #   uses: actions/cache@v3
     #   with:
